@@ -95,7 +95,7 @@ class Pig():
                 print(f'{current_player}, would you like to roll or hold?')
                 move = input()
                         
-            if move == 'roll' and current_score < 100:
+            if move == 'r' and current_score < 100:
                 if roll != 1:               
                     player_scores[current_player].append(roll)    
                     current_score = sum(player_scores[current_player])
@@ -109,7 +109,7 @@ class Pig():
                     else:
                         start_player += 1 
                     
-            elif move == 'hold':                       
+            elif move == 'h':                       
                 print (f"{current_player} wants to hold. Next player rolls.")
                 roll = random.randint(1, 6)
                 if start_player + 1 > player_count - 1:
@@ -121,7 +121,7 @@ class Pig():
                 return None
         
             else:
-                print ('Not a valid move, enter roll or hold for your move.')
+                print ('Not a valid move, enter r or h for your move.')
         
         else:
             import operator
@@ -171,7 +171,7 @@ class TimedGameProxy(Pig):
             print(f'{current_player}, would you like to roll or hold?')
             move = input()
             
-            if move == 'roll' and current_score < 100:
+            if move == 'r' and current_score < 100:
                 if roll != 1:               
                     player_scores[current_player].append(roll)    
                     current_score = sum(player_scores[current_player])
@@ -189,7 +189,7 @@ class TimedGameProxy(Pig):
                     else:
                         start_player += 1 
                     
-            elif move == 'hold':                       
+            elif move == 'h':                       
                 print (f"{current_player} wants to hold. Next player rolls.")
                 if start_player + 1 > player_count - 1:
                     start_player = 0
